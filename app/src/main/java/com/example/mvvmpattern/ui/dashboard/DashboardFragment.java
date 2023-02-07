@@ -96,32 +96,10 @@ public class DashboardFragment extends Fragment {
                 int position = viewHolder.getAdapterPosition ();
                 if (direction == ItemTouchHelper.RIGHT) {
 
-                /*    new Handler ().postDelayed (new Runnable () {
-                        @Override
-                        public void run() {
-                            BooksDataBase database = BooksDataBase.getInstance (getActivity ().getApplication ());
-                            postCodeDao = database.postCodeDao ();
-                            postCodeDao.deleteAll (position);
-                        }
-                    },1000);*/
-
-                    // postCodeDao.deleteAll (position);
-                   /* new Handler (new Handler.Callback () {
-                        @Override
-                        public boolean handleMessage(@NonNull Message message) {
-                            BooksDataBase database = BooksDataBase.getInstance (getActivity ().getApplication ());
-                            postCodeDao = database.postCodeDao ();
-                            postCodeDao.deleteAll ();
-                            return false;
-                        }
-                    });*/
                     AsyncTask.execute (new Runnable () {
                         @Override
                         public void run() {
                             postCodeDao.deleteAll (arrayList.get (position).getId ());
-                            //Perform your Room database operations
-                            //FavRepository repository = new FavRepository (getActivity ().getApplication ());
-                            //  repository.delete (position);
 
                         }
                     });
@@ -137,10 +115,6 @@ public class DashboardFragment extends Fragment {
                         Log.d ("TAG", String.valueOf (postCodeModels));
                     });
 
-                    //BooksDataBase database =  Room.databaseBuilder(getActivity (), BooksDataBase.class, "MyDatabase").allowMainThreadQueries().build();
-
-                    //  final complaint_customer_model deletedModel = data.get(position);
-                    // catAdapter.EditItem(data.get(position));
                 } else if (direction == ItemTouchHelper.LEFT) {
                     /*final complaint_customer_model deletedModel = data.get(position);
                     pending_adapter.ViewItem(deletedModel);*/
