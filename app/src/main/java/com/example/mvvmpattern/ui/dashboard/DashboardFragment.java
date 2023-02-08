@@ -20,6 +20,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -57,7 +59,10 @@ public class DashboardFragment extends Fragment {
         BooksDataBase database = BooksDataBase.getInstance (getActivity ().getApplication ());
         postCodeDao = database.postCodeDao ();
         posatCodeViewModel = new ViewModelProvider (this).get (BooksFavViewModel.class);
-
+        /*Bundle bundle = new Bundle ();
+        bundle.putString ("amount", "amount");
+        NavHostFragment.findNavController (DashboardFragment.this)
+                .navigate (R.id.navigation_notification, bundle);*/
       /*  skeletonLayout = rootView.findViewById(R.id.skeletonLayout);
         shimmer = rootView.findViewById(R.id.shimmerSkeleton);*/
         this.inflater = (LayoutInflater) getActivity ()
