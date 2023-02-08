@@ -37,6 +37,7 @@ public class Repository {
 
             @Override
             public void onFailure(@NonNull Call<Books> call, @NonNull Throwable t) {
+                //This method must be called from the main thread. If you need set a value from a background thread, you can use postValue(Object)
                 listOfBooks.postValue (null);
             }
         });

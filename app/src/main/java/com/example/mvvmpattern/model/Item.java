@@ -16,7 +16,6 @@ import com.google.gson.annotations.SerializedName;
 
 @Entity(tableName = "books")
 public class Item {
-
     @SerializedName("kind")
     @Expose
     private String kind;

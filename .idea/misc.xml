@@ -6,10 +6,13 @@
         <entry key="..\:/MVVMPattern/app/src/main/res/drawable-v24/ic_close_white.xml" value="0.168" />
         <entry key="..\:/MVVMPattern/app/src/main/res/drawable-v24/ic_search_black_24dp.xml" value="0.168" />
         <entry key="..\:/MVVMPattern/app/src/main/res/drawable/ripple_gray_transparent.xml" value="0.168" />
+        <entry key="..\:/MVVMPattern/app/src/main/res/drawable/skeleton.xml" value="0.165" />
         <entry key="..\:/MVVMPattern/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/MVVMPattern/app/src/main/res/layout/fragment_dashboard.xml" value="0.20416666666666666" />
         <entry key="..\:/MVVMPattern/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/MVVMPattern/app/src/main/res/layout/item.xml" value="0.20416666666666666" />
+        <entry key="..\:/MVVMPattern/app/src/main/res/layout/skeleton_row_layout.xml" value="0.18541666666666667" />
+        <entry key="..\:/MVVMPattern/app/src/main/res/layout/skeleton_shimmer_layout.xml" value="0.18541666666666667" />
         <entry key="..\:/MVVMPattern/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20416666666666666" />
       </map>
     </option>

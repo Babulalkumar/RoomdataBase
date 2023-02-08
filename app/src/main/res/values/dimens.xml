@@ -7,4 +7,5 @@
     <dimen name="default_dimen">10dp</dimen>
     <dimen name="dimen_40">40dp</dimen>
     <dimen name="headingMedium">18sp</dimen>
+    <dimen name="row_layout_height">120px</dimen>
 </resources>
