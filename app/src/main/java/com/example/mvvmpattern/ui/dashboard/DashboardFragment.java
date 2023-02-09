@@ -31,6 +31,7 @@ import com.example.mvvmpattern.dao.BooksDao;
 import com.example.mvvmpattern.database.BooksDataBase;
 import com.example.mvvmpattern.databinding.FragmentDashboardBinding;
 import com.example.mvvmpattern.model.Item;
+import com.example.mvvmpattern.model.VolumeInfo;
 import com.example.mvvmpattern.repository.FavRepository;
 import com.example.mvvmpattern.viewModel.BooksFavViewModel;
 
@@ -71,7 +72,14 @@ public class DashboardFragment extends Fragment {
         catAdapter = new BooksListAdapter (getActivity (), getCats, new BooksListAdapter.click () {
             @Override
             public void itemClick(int position) {
-                SweepFunction (position);
+                AsyncTask.execute (new Runnable () {
+                    @Override
+                    public void run() {
+                        VolumeInfo volumeInfo = arrayList.get (1).getVolumeInfo ();
+                        volumeInfo.setTitle ("Shivam Singh");
+                        postCodeDao.udate (volumeInfo, arrayList.get (1).getId ());
+                    }
+                });
             }
         });
 
@@ -83,6 +91,7 @@ public class DashboardFragment extends Fragment {
                 arrayList.add (item);
                 animateReplaceSkeleton (false, binding.recyclerView);
             }
+
             binding.setDataset (catAdapter);
             Log.d ("TAG", String.valueOf (postCodeModels));
         });
@@ -163,8 +172,8 @@ public class DashboardFragment extends Fragment {
                     AsyncTask.execute (new Runnable () {
                         @Override
                         public void run() {
+                            //postCodeDao.udate ("sabcmjdvdv", arrayList.get (1).getId ());
                             postCodeDao.deleteAll (arrayList.get (position).getId ());
-
                         }
                     });
                     posatCodeViewModel.getAllpostCode ().observe (getActivity (), postCodeModels -> {

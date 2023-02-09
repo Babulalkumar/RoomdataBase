@@ -8,21 +8,15 @@ import androidx.annotation.NonNull;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
-import androidx.room.TypeConverter;
-import androidx.room.TypeConverters;
 import androidx.sqlite.db.SupportSQLiteDatabase;
-
-import com.example.mvvmpattern.Converters;
 import com.example.mvvmpattern.dao.BooksDao;
 import com.example.mvvmpattern.model.AccessInfo;
-import com.example.mvvmpattern.model.Books;
 import com.example.mvvmpattern.model.ImageLinks;
 import com.example.mvvmpattern.model.Item;
-import com.example.mvvmpattern.model.Items;
 import com.example.mvvmpattern.model.Pdf;
 import com.example.mvvmpattern.model.ReadingModes;
 
-@Database(entities = {Item.class, AccessInfo.class, Pdf.class, ReadingModes.class, ImageLinks.class}, version = 1)
+@Database(entities = {Item.class, AccessInfo.class, Pdf.class, ReadingModes.class, ImageLinks.class}, version = 1,exportSchema = false)
 //@TypeConverters(Converters.class)
 public abstract class BooksDataBase extends RoomDatabase {
 
@@ -55,7 +49,7 @@ public abstract class BooksDataBase extends RoomDatabase {
     };
 
     static class PopulateDbAsyn extends AsyncTask<Void, Void, Void> {
-        private BooksDao postCodeDao;
+        private final BooksDao postCodeDao;
 
         public PopulateDbAsyn(BooksDataBase postCodeDataBase) {
             postCodeDao = postCodeDataBase.postCodeDao ();

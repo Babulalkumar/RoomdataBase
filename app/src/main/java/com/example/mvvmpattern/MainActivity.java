@@ -30,14 +30,17 @@ public class MainActivity extends AppCompatActivity {
         //   BottomNavigationView navView = findViewById (R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder (
+        /*AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder (
                 R.id.navigation_home, R.id.navigation_dashboard)
                 .build ();
         NavController navController = Navigation.findNavController (this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController (this, navController, appBarConfiguration);
-        NavigationUI.setupWithNavController (binding.navView, navController);
+        NavigationUI.setupWithNavController (binding.navView, navController);*/
+        Bundle bundle = new Bundle();
+        bundle.putString("amount", "amount");
+      //  Navigation.findNavController(navController).navigate(R.id.navigation_notification, bundle);
 
-   /*     // setting up the adapter
+        // setting up the adapter
         ViewPagerAdpter viewPagerAdapter = new ViewPagerAdpter (getSupportFragmentManager ());
 
         // add the fragments
@@ -51,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         // The Page (fragment) titles will be displayed in the
         // tabLayout hence we need to  set the page viewer
         // we use the setupWithViewPager().
-        binding.tabLayout.setupWithViewPager (binding.viewpager);*/
+        binding.tabLayout.setupWithViewPager (binding.viewpager);
     }
 
 }
